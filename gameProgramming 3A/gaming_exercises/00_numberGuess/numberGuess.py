@@ -12,6 +12,7 @@
         # Award a point to the CPU.
         # Print a loss message.
 
+# INCORRECT FILE NAMES FOR IMAGES, CAUSES A CRASH. PLEASE FIX. 
 # Guess a Number, Gavin Kloeckner, v0.7
 import random, tracemalloc, winsound
 from PIL import Image
