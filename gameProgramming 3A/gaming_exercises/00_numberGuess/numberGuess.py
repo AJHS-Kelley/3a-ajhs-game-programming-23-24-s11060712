@@ -17,7 +17,6 @@
 import random, tracemalloc, winsound
 from PIL import Image
 tracemalloc.start()
-
 # Declarations
 secretNumber = -1 
 playerName = "" # empty string
