@@ -1,4 +1,4 @@
-# Collections, Kloeckner Gavin, v0.1
+# Collections, Kloeckner Gavin, v0.1.1
 # Adding items
 
 playerInventory = []
@@ -10,9 +10,8 @@ playerInventory.sort()
 print(playerInventory)
 
 # Removing Items
-while len(playerInventory) < 5:
+while len(playerInventory) > 5:
     item = input("Now, please select the item that you would like to remove from the inventory.\n")
     playerInventory.remove(item)
 playerInventory.sort()
-
 print(playerInventory)
