@@ -1,4 +1,4 @@
-# Collections, Kloeckner Gavin, v0.2
+# Collections, Kloeckner Gavin, v0.3
 # Adding items
 
 # playerInventory = []
@@ -17,9 +17,9 @@
 # print(playerInventory)
 
 weaponList = [
-    False, # Crytinan Standard Issue RaL-TC
-    False, # Personal Radiation Pistol-17 (PRP-17)
-    False, # V3 Impulse Grenade
+    True, # Crytinan Standard Issue RaL-TC
+    True, # Personal Combat Sidearm-17 (PCS-17)
+    True, # V3 Impulse Grenade
     False, # Energy Shield
     False  # ARK-56 (Flame Launcher)
 ]
@@ -27,3 +27,15 @@ weaponList = [
 #index
 # first element is index[0]
 # shortcut to the last element is index[-1]
+for weapon in weaponList:
+    if weaponList[0] == True:
+        print("You have been outfitted with the RaL-TC.\n")
+    if weaponList[1] == True:
+        print("You have been outfitted with the PCS-17.\n")
+    if weaponList[2] == True:
+        print("You have been outfitted with the Impulse Grenade.\n")
+    if weaponList[3] == True:
+        print("You have been outfitted with the Energy Shield.\n")
+    if weaponList[4] == True:
+        print("You have been outfitted with the Flame Launcher.\n")
+    break
