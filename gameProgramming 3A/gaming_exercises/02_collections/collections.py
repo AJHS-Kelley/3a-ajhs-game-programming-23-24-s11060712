@@ -1,4 +1,4 @@
-# Collections, Kloeckner Gavin, v0.4
+# Collections, Kloeckner Gavin, v0.4.1
 # Adding items
 
 # playerInventory = []
@@ -29,14 +29,14 @@ weaponList = [
 # shortcut to the last element is index[-1]
 weaponNum = 0
 while weaponNum < len(weaponList):
-    if weaponList[0] == True:
+    if weaponNum == 0 and weaponList[0] == True:
         print("You have been outfitted with the RaL-TC.\n")
-    if weaponList[1] == True:
+    if weaponNum == 1 and weaponList[1] == True:
         print("You have been outfitted with the PCS-17.\n")
-    if weaponList[2] == True:
+    if weaponNum == 2 and weaponList[2] == True:
         print("You have been outfitted with the Impulse Grenade.\n")
-    if weaponList[3] == True:
+    if weaponNum == 3 and weaponList[3] == True:
         print("You have been outfitted with the Energy Shield.\n")
-    if weaponList[4] == True:
+    if weaponNum == 4 and weaponList[4] == True:
         print("You have been outfitted with the Flame Launcher.\n")
     weaponNum += 1
