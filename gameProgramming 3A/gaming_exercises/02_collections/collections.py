@@ -1,4 +1,4 @@
-# Collections, Kloeckner Gavin, v0.3
+# Collections, Kloeckner Gavin, v0.4
 # Adding items
 
 # playerInventory = []
@@ -27,7 +27,8 @@ weaponList = [
 #index
 # first element is index[0]
 # shortcut to the last element is index[-1]
-for weapon in weaponList:
+weaponNum = 0
+while weaponNum < len(weaponList):
     if weaponList[0] == True:
         print("You have been outfitted with the RaL-TC.\n")
     if weaponList[1] == True:
@@ -38,4 +39,4 @@ for weapon in weaponList:
         print("You have been outfitted with the Energy Shield.\n")
     if weaponList[4] == True:
         print("You have been outfitted with the Flame Launcher.\n")
-    break
+    weaponNum += 1
