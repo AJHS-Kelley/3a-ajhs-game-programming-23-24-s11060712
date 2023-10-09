@@ -1,4 +1,4 @@
-# Collections, Kloeckner Gavin, v0.4.3
+# Collections, Kloeckner Gavin, v0.4.4
 # Adding items
 
 # playerInventory = []
@@ -81,3 +81,16 @@ enemyPrefix = [
     "Rapid Attack Vehicle"
 ]
 
+import random
+
+# Index Range (0,4)
+enemyNames = [] 
+while len(enemyNames) < 15:
+    enemyBaseGen = enemyBase[random.randint(0,4)]
+    enemyTypeGen = enemyBase[random.randint(0,4)]
+    enemyPrefixGen = enemyBase[random.randint(0,4)]
+    newEnemy = enemyPrefixGen + " " + enemyBaseGen + " " + enemyTypeGen
+    enemyNames += enemyBaseGen
+    enemyNames.append(newEnemy)
+
+print(enemyNames)
