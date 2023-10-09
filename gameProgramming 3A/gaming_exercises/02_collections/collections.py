@@ -1,4 +1,4 @@
-# Collections, Kloeckner Gavin, v0.4.2
+# Collections, Kloeckner Gavin, v0.4.3
 # Adding items
 
 # playerInventory = []
@@ -41,15 +41,43 @@
 #         print("You have been outfitted with the Flame Launcher.\n")
 #     weaponNum += 1
 
-doorKeys = [
-    "red",
-    "blue",
-    "green",
-    "purple",
-    "white"
+# doorKeys = [
+#     "red",
+#     "blue",
+#     "green",
+#     "purple",
+#     "white"
+# ]
+# color = input("Which key do you need to proceed?\n").lower()
+# if color in doorKeys:
+#     print(f"You have the {color} key!.\n")
+# else:
+#     print(f"You do not have the {color} key.\n")
+
+# Random Enemy Genrator
+
+enemyBase = [
+    "Soldier",
+    "Artillery",
+    "Tank",
+    "RAV",
+    "Dropship",
+    "Fighter"
 ]
-color = input("Which key do you need to proceed?\n").lower()
-if color in doorKeys:
-    print(f"You have the {color} key!.\n")
-else:
-    print(f"You do not have the {color} key.\n")
+
+enemyType = [
+    "Front Line Infantry",
+    "Heavy Artillery Piece",
+    "Hover Tank",
+    "Orbital Dropship",
+    "Ravager Star Fighter"
+]
+
+enemyPrefix = [
+    "Standard Unit",
+    "Mobile Support Unit",
+    "Heavy Unit",
+    "Light Reconaissence Vehicle",
+    "Rapid Attack Vehicle"
+]
+
