@@ -87,8 +87,8 @@ import random
 enemyNames = [] 
 while len(enemyNames) < 15:
     enemyBaseGen = enemyBase[random.randint(0,4)]
-    enemyTypeGen = enemyBase[random.randint(0,4)]
-    enemyPrefixGen = enemyBase[random.randint(0,4)]
+    enemyTypeGen = enemyType[random.randint(0,4)]
+    enemyPrefixGen = enemyPrefix[random.randint(0,4)]
     newEnemy = enemyPrefixGen + " " + enemyBaseGen + " " + enemyTypeGen
     enemyNames += enemyBaseGen
     enemyNames.append(newEnemy)
