@@ -1,4 +1,4 @@
-# Functions, 10-18-23, Gavin Kloeckner, v0.1
+# Functions, 10-18-23, Gavin Kloeckner, v0.2
 
 def functionName(): # Function Signature 
     print("What is your name?\n")
@@ -16,7 +16,18 @@ def happyBirthday(numTimes, age):
     print(f"Congratulations on turning {age}-years-old!\n")
 
 
-happyBirthday(10, 36)
-happyBirthday(5, 17)
-happyBirthday(16, 15)
-happyBirthday(6, 14)
+#happyBirthday(10, 36)
+
+def functionWithReturn(num1, num2):
+    sum = num1 + num2
+    quotient = sum / 5
+    return quotient # returns immediately exits a function
+
+def functionWithReturn(num1, num2):
+    sum = num1 + num2
+    quotient = sum / 5
+    print(quotient)
+
+example = functionWithReturn(4, 17)
+print(example)
+
