@@ -1,4 +1,4 @@
-# Functions, 10-18-23, Gavin Kloeckner, v0.4.1
+# Functions, 10-18-23, Gavin Kloeckner, v0.4.2
 
 import random
 
@@ -53,16 +53,19 @@ def rollDice(numRoll, sizeRoll):
 # print(d20Sum)
 
 def genStat():
-    rolls = [0, 0, 0, 0] 
-    rolls[0] = rollDice(1, 6)
-    rolls[1] = rollDice(1, 6)
-    rolls[2] = rollDice(1, 6)
-    rolls[3] = rollDice(1, 6)
-    print(rolls)
+
+    rolls = []
+    count = 0
+    while count < 4:
+        rolls.append(rollDice(1, 6))
+        count += 1
+
     rolls.sort()
     rolls.pop(0)
-    print(rolls)
-    print(sum(rolls))
-
-
-genStat()
+    return sum(rolls)
+count = 0
+while count < 10000:
+    test = genStat()
+    if test >
+strength = genStat()
+print(f"Your power level is {strength}.\n")
