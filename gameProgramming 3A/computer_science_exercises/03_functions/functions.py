@@ -1,4 +1,4 @@
-# Functions, 10-18-23, Gavin Kloeckner, v0.4.2
+# Functions, 10-18-23, Gavin Kloeckner, v0.5
 
 import random
 
@@ -66,6 +66,12 @@ def genStat():
 count = 0
 while count < 10000:
     test = genStat()
-    if test >
+    if test > 18:
+        print("Your roll is higher than 18.\n")
+    if test < 3:
+        print("You have not reached the minimum roll.\n")
+    count += 1
+else:
+    print("No error detected, all stats are within range.\n")
 strength = genStat()
 print(f"Your power level is {strength}.\n")
