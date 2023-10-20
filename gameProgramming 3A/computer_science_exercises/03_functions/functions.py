@@ -1,4 +1,4 @@
-# Functions, 10-18-23, Gavin Kloeckner, v0.4
+# Functions, 10-18-23, Gavin Kloeckner, v0.4.1
 
 import random
 
@@ -38,19 +38,19 @@ def rollDice(numRoll, sizeRoll):
     sum = 0
     while count < numRoll:
         roll = random.randint(1, sizeRoll)
-        print(f"Roll #{count}: {roll}\n")
+        # print(f"Roll #{count}: {roll}\n")
         sum += roll
         count += 1
-    print(sum)
+    # print(sum)
     return sum
 
-print("D4 Rolls")
-d4Sum = rollDice(10, 4)
-print("D20 Rolls")
-d20Sum = rollDice(2, 20)
+# print("D4 Rolls")
+# d4Sum = rollDice(10, 4)
+# print("D20 Rolls")
+# d20Sum = rollDice(2, 20)
 
-print(d4Sum)
-print(d20Sum)
+# print(d4Sum)
+# print(d20Sum)
 
 def genStat():
     rolls = [0, 0, 0, 0] 
@@ -59,5 +59,10 @@ def genStat():
     rolls[2] = rollDice(1, 6)
     rolls[3] = rollDice(1, 6)
     print(rolls)
+    rolls.sort()
+    rolls.pop(0)
+    print(rolls)
+    print(sum(rolls))
+
 
 genStat()
