@@ -48,9 +48,13 @@ HANGMAN_BOARD = ['''
         =====''']                                           
 
 def getRandomWord(wordList):
-    pass
+    wordIndex = random.randint(0 , len(wordList) - 1)
+    # len(listName) - 1 is the most common way to prevent index out of range
+    print(wordIndex)
+    print(wordList[wordIndex])
+    return wordList[wordIndex]
 
 # i = 0            
-# while i < len(HANGMAN_BOARD):
-#     print(HANGMAN_BOARD[i])
+# while i < 25:
+#     getRandomWord(wordList)
 #     i += 1
