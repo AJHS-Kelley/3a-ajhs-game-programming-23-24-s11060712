@@ -75,6 +75,10 @@ def displayBoard(missedLetters, correctLetters, secretWord):
             # [i+1:] means slice from the i+1 until the end
             # [startingPoint:endingPoint]
             
+    for letters in blanks:
+        print(letters, end = '')
+    print()
+    
 
 # i = 0            
 # while i < 25:
