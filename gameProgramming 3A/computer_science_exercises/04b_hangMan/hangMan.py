@@ -93,6 +93,11 @@ def getGuess(alreadyGuessed):
             print('What you put has already been guessed. Please guess a different letter.\n')
         else:
             return guess
+        
+def playAgain():
+    print('Would you like to play again?\nPlease type YES or NO in the space below\n')
+    return input().upper().startswith('y') # return True/False based on input
+
 
 
 # i = 0            
