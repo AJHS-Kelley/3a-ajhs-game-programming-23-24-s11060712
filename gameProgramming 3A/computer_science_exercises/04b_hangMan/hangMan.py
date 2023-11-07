@@ -103,7 +103,7 @@ print('Welcome to Hangman! Shall we get started?\n') # A backslash (\) escapes s
 missedLetters = ''
 correctLetters = ''
 secretWord = getRandomWord(wordList)
-print(secretWord)
+print('The secret word is ' + secretWord)
 gameIsDone = False
 
 # Game Loop begins here
@@ -124,6 +124,14 @@ while True: # 99% of the time, the loop will start this way
                 break
         if foundAllLetters:
             print('We have ourselves a winner!\nThank you for playing!\n')
+            gameIsDone = True
+    else: # Missed letter
+        missedLetters = missedLetters + guess
+
+        if len(missedLetters) == len(HANGMAN_BOARD) - 1:
+            displayBoard(missedLetters, correctLetters, secretWord)
+            print('Sorry, but you lost the game. You guessed too many times\n')
+            print('The secret word was: ' + secretWord)
             gameIsDone = True
     
 
