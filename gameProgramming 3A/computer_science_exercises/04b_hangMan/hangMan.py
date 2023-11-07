@@ -98,6 +98,13 @@ def playAgain():
     print('Would you like to play again?\nPlease type YES or NO in the space below\n')
     return input().upper().startswith('y') # return True/False based on input
 
+# Start The Game
+print('Welcome to Hangman! Shall we get started?\n') # A backslash (\) escapes special characters
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(wordList)
+print(secretWord)
+gameIsDone = False
 
 
 # i = 0            
