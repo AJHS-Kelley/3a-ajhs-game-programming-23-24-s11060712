@@ -106,6 +106,26 @@ secretWord = getRandomWord(wordList)
 print(secretWord)
 gameIsDone = False
 
+# Game Loop begins here
+while True: # 99% of the time, the loop will start this way
+    # Two ways to exit while True: return OR break
+    displayBoard(missedLetters, correctLetters, secretWord)
+
+    guess = getGuess(missedLetters + correctLetters)
+    
+    if guess in secretWord: # Is the guess in the secretWord?
+        correctLetters = correctLetters + guess
+
+        # Check for victory
+        foundAllLetters = True
+        for i in range(len(secretWord)):
+            if secretWord[i] not in correctLetters:
+                foundAllLetters = False
+                break
+        if foundAllLetters:
+            print('We have ourselves a winner!\nThank you for playing!\n')
+            gameIsDone = True
+    
 
 # i = 0            
 # while i < 25:
