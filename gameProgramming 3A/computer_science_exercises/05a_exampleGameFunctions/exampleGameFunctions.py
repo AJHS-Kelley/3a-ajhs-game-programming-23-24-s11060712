@@ -1,11 +1,10 @@
-# Example Game Functions, Gavin Kloeckner, v0.1.4
+# Example Game Functions, Gavin Kloeckner, v0.1.5
 import random
 
 damageNum = 0
 moveSpeed = 0
 armorStat = 0
 baseHealth = 0
-cardAmount = 0
 cardType = 'Infantry Artillery Tank Aerial'.split()
 teamSelect = ['Team 1', 'Team 2', 'Team 3', 'Team 4']
 
@@ -26,18 +25,16 @@ teamSelect = ['Team 1', 'Team 2', 'Team 3', 'Team 4']
 
 # getTeam()
 
-def cardStatus(cardType, cardAmount):
-    while cardAmount < 10:
-        cardType = cardType[random.randint(0,3)]
-        damageNum = random.randint(0,50)
-        moveSpeed = random.randint(0,50)
-        armorStat = random.randint(0,10)
-        baseHealth = random.randint(0,100)
-        deck = cardType + damageNum + moveSpeed + armorStat + baseHealth
-        cardType += deck
-        cardAmount.append(deck)
+def cardStatus(cardType):
+    while len(cardType) < 10:
+        damageNumGen = random.randint(0,50)
+        moveSpeedGen = random.randint(0,50)
+        armorStatGen = random.randint(0,10)
+        baseHealthGen = random.randint(0,100)
+        deck = cardType + damageNumGen + moveSpeedGen + armorStatGen + baseHealthGen
+        print(deck)
 
-cardStatus(cardType, cardAmount)
+cardStatus(cardType)
 
 
 # Code Review by Lily King
