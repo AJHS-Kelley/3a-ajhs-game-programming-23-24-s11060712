@@ -38,3 +38,6 @@ getTeam()
 #         cardAmount.append(deck)
 
 # cardStatus(cardType, cardAmount)
+
+
+# Code Review by Lily King
