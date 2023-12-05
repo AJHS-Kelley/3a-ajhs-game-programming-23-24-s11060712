@@ -1,4 +1,4 @@
-# Example Game Functions, Gavin Kloeckner, v0.1.6
+# Example Game Functions, Gavin Kloeckner, v0.1.6 WIP
 import random
 
 damageNum = 0
