@@ -1,10 +1,10 @@
 # Example Game Functions, Gavin Kloeckner, v0.1.6 WIP
 import random
 
-damageNum = 0
-moveSpeed = 0
-armorStat = 0
-baseHealth = 0
+damageNum = 0 # Set min / max values, or describe the variable. 
+moveSpeed = 0 # Set min / max values, or describe the variable. 
+armorStat = 0 # Set min / max values, or describe the variable. 
+baseHealth = 0 # Set min / max values, or describe the variable. 
 cardType = [
             "Infantry",
             "Artillery",
@@ -12,24 +12,20 @@ cardType = [
             "Aerial"
 ]
 
-teamSelect = ['Team 1', 'Team 2', 'Team 3', 'Team 4']
+teamSelect = ['Fake Team', 'Team 1', 'Team 2', 'Team 3', 'Team 4']
 
 
-# def getTeam():
-#     print('Welcome to the Intergelactic Card Game!\n')
-#     team = input(f'Before we get started, please input a number of the team you would like to be on:\n{teamSelect}\n')
-#     while True:
-#         if team not in '1234':
-#             team = input('Team number not in range. Please input a number within 1-4 and press enter.\n')
-#         elif team in '12345':
-#             clarify = input(f'Are you sure you want to be on {team}?\n')
-#         if clarify == 'yes':
-#             print('Alright, now that you have selected your team,\nlet\'s move on.')
-#             break
-#         else:
-#             team = input(f'Please select what team you want to be on:\n{teamSelect}\n')
+def getTeam():
+    print('Welcome to the Intergalactic Card Game!\n')
+    team = input(f'Before we get started, please input a number of the team you would like to be on:\n{teamSelect}\n')
+    
+    while team not in '1234':
+        team = input('Team number not in range. Please input a number within 1-4 and press enter.\n')
+    teamName = teamSelect[int(team)]
+    # print(teamName)
+    return teamName 
 
-# getTeam()
+myTeam = getTeam()
 
 cardtype = []
 def cardStatus(cardType):
@@ -43,7 +39,7 @@ def cardStatus(cardType):
         
         print(deck)
 
-cardStatus(cardType)
+#cardStatus(cardType)
 
 
 # Code Review by Lily King
