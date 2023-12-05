@@ -1,10 +1,10 @@
-# Example Game Functions, Gavin Kloeckner, v0.1.6 WIP
+# Example Game Functions, Gavin Kloeckner, v0.1.7 WIP
 import random
 
-damageNum = 0 # Set min / max values, or describe the variable. 
-moveSpeed = 0 # Set min / max values, or describe the variable. 
-armorStat = 0 # Set min / max values, or describe the variable. 
-baseHealth = 0 # Set min / max values, or describe the variable. 
+damageNum = 0 # 0 min / 100 max
+moveSpeed = 0 # 0 min / 100 max
+armorStat = 0 # 0 min / 100 max 
+baseHealth = 0 # 0 min / 100 max 
 cardType = [
             "Infantry",
             "Artillery",
@@ -25,47 +25,44 @@ def getTeam(): # Function passes code test.
     # print(teamName)
     return teamName 
 
-myTeam = getTeam()
+# myTeam = getTeam()
 
 def cardStatus(cardType): # Finish the if/elf/else block for the card types. 
-    # while len(cardType) < 10:
-    #     cardType = [random.randint(0, 4)]
-    #     damageNumGen = random.randint(0, 50)
-    #     moveSpeedGen = random.randint(0, 50)
-    #     armorStatGen = random.randint(0, 10)
-    #     baseHealthGen = random.randint(0, 100)
-        
-        
-
     if cardType == 'Artillery':
-        damageNumGen = random.randint(0, 50)
-        moveSpeedGen = random.randint(0, 50)
+        damageNumGen = random.randint(40, 110)
+        moveSpeedGen = random.randint(0, 30)
         armorStatGen = random.randint(0, 10)
-        baseHealthGen = random.randint(0, 100)
+        baseHealthGen = random.randint(10, 30)
     elif cardType == 'Infantry':
-        damageNumGen = random.randint(0, 10)
-        moveSpeedGen = random.randint(0, 10)
-        armorStatGen = random.randint(0, 5)
-        baseHealthGen = random.randint(0, 10)
-    # elif Tank 
-    # elif Ariel 
+        damageNumGen = random.randint(1, 10)
+        moveSpeedGen = random.randint(1, 15)
+        armorStatGen = random.randint(1, 10)
+        baseHealthGen = random.randint(1, 8)
+    elif cardType == 'Tank':
+        damageNumGen = random.randint(10, 50)
+        moveSpeedGen = random.randint(10, 40)
+        armorStatGen = random.randint(10, 80)
+        baseHealthGen = random.randint(10, 70)
+    elif 'Aerial':
+        damageNumGen = random.randint(10, 30)
+        moveSpeedGen = random.randint(40, 100)
+        armorStatGen = random.randint(3, 30)
+        baseHealthGen = random.randint(3, 20)
     else: 
-        print('Error Message Here')
-    card = (cardType,damageNumGen, moveSpeedGen, armorStatGen, baseHealthGen)
+        print('Unable to recognize cards.\n')
+    card = (damageNumGen, moveSpeedGen, armorStatGen, baseHealthGen)
     print(card)
-
-cardStatus('Artillery')
-cardStatus('Infantry')
+cardStatus(cardType)
 
 # while numCardsInDeck > 0: 
 #     drawCard()
 #     cardType = getCardType(card)
 #     cardStatus(cardType) 
 
-def makeDeck(cardType): 
+def makeDeck(cardType, ):
     deckList = [] 
     while len(deckList) < 10: 
-        deckList.append(cardType[random.randint(0, 3)]) 
+        deckList.append(cardType[random.randint(0, 3)])
     print(deckList)
 
 makeDeck(cardType)
