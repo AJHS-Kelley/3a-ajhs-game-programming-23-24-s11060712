@@ -1,4 +1,4 @@
-# Classes and Objects, Gavin Kloeckner, v0.4
+# Classes and Objects, Gavin Kloeckner, v0.5
 
 class Person: # Class names should be PascalCase
     def __init__(self, age, height, hairColor, name, weight, birthday):
@@ -50,3 +50,21 @@ examplePerson.needDiet()
 # print(examplePerson2.birthday)
 # examplePerson2.birthday = "March 05"
 # print(examplePerson2.birthday)
+
+# Deleting Properties
+# print(examplePerson.name)
+# del examplePerson.name
+# print(examplePerson.name)
+# del completely removes the property
+
+# Deleting Whole Objects
+print(examplePerson2)
+del examplePerson2
+print(examplePerson2)
+# Delete objects that are no longer needed to free up memory
+
+class Food:
+    pass # I am not done with this function yet, move along
+
+
+
