@@ -1,4 +1,4 @@
-# Classes and Objects, Gavin Kloeckner, v0.3
+# Classes and Objects, Gavin Kloeckner, v0.3.1
 
 class Person: # Class names should be PascalCase
     def __init__(self, age, height, hairColor, name, weight, birthday):
@@ -21,3 +21,11 @@ class Person: # Class names should be PascalCase
 examplePerson = Person(17, '5\'9\"', 'brown', 'Gavin', 122, 'July 17')
 examplePerson2 = Person(31, '6\'1\"', 'black', 'John', 200, 'April 31')
 print(examplePerson)
+
+# Changing Properties After Creating Object
+print(examplePerson2.age)
+examplePerson2.age = 320
+print(examplePerson2.age)
+print(examplePerson2.birthday)
+examplePerson2.birthday = "March 05"
+print(examplePerson2.birthday)
