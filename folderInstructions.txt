@@ -1,0 +1,8 @@
+If you are ONLY in Game Programming (3A, 8B) delete the multiUserGameProgramming\ folder. 
+If you are ONLY in Multi-User Game Programming (4A) delete the gameProgramming\ folder. 
+
+If you are in both, keep both! 
+
+Once you delete the folders, delete this file as well. 
+
+Then commit all changes to GitHub. 
