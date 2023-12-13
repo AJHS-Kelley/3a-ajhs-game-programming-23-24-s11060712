@@ -1,4 +1,4 @@
-# Dice Roll, Gavin Kloeckner, v0.3
+# Dice Roll, Gavin Kloeckner, v0.3.1
 
 import random
 
@@ -13,6 +13,7 @@ def rollDice(numRoll, sizeRoll):
     print(sum)
     return sum
 
+# Verified to be working
 def rollDicePrint(numRoll, sizeRoll):
     count = 0
     sum = 0
@@ -44,7 +45,4 @@ roll1 = rollDice(1, 6)
 roll2 = rollDice(1, 6)
 print(f'The first roll is {roll1}.\nThe second roll is {roll2}.\n')
 
-if isExploding(roll1, 6):
-    print('This die has exploded. Roll again.\n')
-else:
-    print('This die has not exploded.\n')
+
