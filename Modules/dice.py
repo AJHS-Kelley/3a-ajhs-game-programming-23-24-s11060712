@@ -1,4 +1,4 @@
-# Dice Roll, Gavin Kloeckner, v0.2
+# Dice Roll, Gavin Kloeckner, v0.2.1
 
 import random
 
@@ -23,6 +23,7 @@ def rollDicePrint(numRoll, sizeRoll):
         count += 1
     print(sum)
     return sum
+
     
 def isExploding(roll, sizeRoll):
     if roll == sizeRoll:
@@ -31,6 +32,7 @@ def isExploding(roll, sizeRoll):
         isExploding = False
     return isExploding
 
+# Code confirmed. It is working as intended.
 def isDouble(roll1, roll2):
     if roll1 == roll2:
         isDouble = True
@@ -42,7 +44,4 @@ roll1 = rollDice(1, 6)
 roll2 = rollDice(1, 6)
 print(f'The first roll is {roll1}.\nThe second roll is {roll2}.\n')
 
-if isDouble(roll1, roll2):
-    print('It is a double!\n')
-else:
-    print('It is not a double.\n')
+
