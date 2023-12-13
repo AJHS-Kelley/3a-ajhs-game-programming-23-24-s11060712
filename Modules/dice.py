@@ -1,4 +1,4 @@
-# Dice Roll, Gavin Kloeckner, v0.1
+# Dice Roll, Gavin Kloeckner, v0.2
 
 import random
 
@@ -37,3 +37,12 @@ def isDouble(roll1, roll2):
     else:
         isDouble = False
     return isDouble
+
+roll1 = rollDice(1, 6)
+roll2 = rollDice(1, 6)
+print(f'The first roll is {roll1}.\nThe second roll is {roll2}.\n')
+
+if isDouble(roll1, roll2):
+    print('It is a double!\n')
+else:
+    print('It is not a double.\n')
