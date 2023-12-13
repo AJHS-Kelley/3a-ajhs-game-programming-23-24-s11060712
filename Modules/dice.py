@@ -1,4 +1,4 @@
-# Dice Roll, Gavin Kloeckner, v0.2.1
+# Dice Roll, Gavin Kloeckner, v0.3
 
 import random
 
@@ -44,4 +44,7 @@ roll1 = rollDice(1, 6)
 roll2 = rollDice(1, 6)
 print(f'The first roll is {roll1}.\nThe second roll is {roll2}.\n')
 
-
+if isExploding(roll1, 6):
+    print('This die has exploded. Roll again.\n')
+else:
+    print('This die has not exploded.\n')
