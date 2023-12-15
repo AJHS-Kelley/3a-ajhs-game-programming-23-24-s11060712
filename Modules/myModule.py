@@ -1,6 +1,6 @@
-# Dice Roll, Gavin Kloeckner, v0.3.2
+# Dice Roll, Gavin Kloeckner, v0.3.3
 
-import random, time
+import random, time, tracemalloc
 
 def rollDice(numRoll, sizeRoll):
     count = 0
@@ -51,3 +51,12 @@ def getTime():
 
 def execTime(start, stop):
     return f'Execution Time: {start - stop} seconds.\n'
+
+def memStart():
+    return tracemalloc.start()
+
+def memStop():
+    return tracemalloc.stop()
+
+def memUsage(start, stop):
+    return f'Current Memory Usage: {start}\nHighest Memory Usage: {stop}\n'
