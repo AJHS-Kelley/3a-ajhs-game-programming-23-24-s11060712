@@ -50,4 +50,4 @@ def getTime():
 
 
 def execTime(start, stop):
-    return f'Execution Time: {stop - start} seconds.\n'
+    return f'Execution Time: {start - stop} seconds.\n'
