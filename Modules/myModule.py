@@ -1,6 +1,6 @@
-# Dice Roll, Gavin Kloeckner, v0.3.1
+# Dice Roll, Gavin Kloeckner, v0.3.2
 
-import random
+import random, time
 
 def rollDice(numRoll, sizeRoll):
     count = 0
@@ -14,7 +14,7 @@ def rollDice(numRoll, sizeRoll):
     return sum
 
 # Verified to be working
-def rollDicePrint(numRoll, sizeRoll):
+def dispDice(numRoll, sizeRoll):
     count = 0
     sum = 0
     while count < numRoll:
@@ -45,4 +45,9 @@ roll1 = rollDice(1, 6)
 roll2 = rollDice(1, 6)
 print(f'The first roll is {roll1}.\nThe second roll is {roll2}.\n')
 
+def getTime():
+    return time.time()
 
+
+def execTime(start, stop):
+    return f'Execution Time: {stop - start} seconds.\n'
