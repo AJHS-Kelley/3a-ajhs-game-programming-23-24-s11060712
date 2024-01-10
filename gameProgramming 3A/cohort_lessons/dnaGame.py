@@ -21,5 +21,5 @@ def genDNA() -> str:
         basesGenerated += 1
     return dnaSequence
 
-dna = genDNA()
-print(dna)
+# dna = genDNA()
+# print(dna)
