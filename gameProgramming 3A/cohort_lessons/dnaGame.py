@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.5.1a
+# DNA replication Gavin Kloeckner, v0.6a
 
 import time, datetime # Bring the whole tool box
 
@@ -48,6 +48,32 @@ def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
             break
     return isMatch
 
+
+def calcScore(time: float, dnaSequence: str) -> float:
+    score = 0
+    if time < 2.0:
+        score += 20000
+    elif time < 4.0:
+        score += 2000
+    elif time < 6.0:
+        score += 200
+    elif time < 8.0:
+        score += 20
+    else:
+        score += 10
+    
+    if len(dnaSequence) >= 25:
+        score *= 4.0
+    elif len(dnaSequence) >= 15:
+        score *= 3.0
+    elif len(dnaSequence) >= 10:
+        score *= 2.0
+    elif len(dnaSequence) >= 5:
+        score *= 1.5
+    else:
+        score *= 1.0
+
+    return score
 
 dna = genDNA()
 print(dna)
