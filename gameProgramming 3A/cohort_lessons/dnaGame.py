@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.3a
+# DNA replication Gavin Kloeckner, v0.4a
 
 import time, datetime # Bring the whole tool box
 
@@ -32,8 +32,36 @@ def genRNA(dnaSequence: str) -> tuple:
     rnaTime = rnaStop - rnaStart
     return(rnaSequence, rnaTime) # Tuples are ordered (index), unchangeable, allows duplicates
 
+def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
+    isMatch = False
+    for eachBase in rnaSequence:
+        if eachBase == "U" and dnaSequence != "T":
+            isMatch = False
+            print('Both of these sequences do not match.\n')
+            break
+        elif eachBase == "C" and dnaSequence != "G":
+            isMatch = False
+            print('Both of these sequences do not match.\n')
+            break
+        elif eachBase == "G" and dnaSequence != "C":
+            isMatch = False
+            print('Both of these sequences do not match.\n')
+            break
+        elif eachBase == "T" and dnaSequence != "A":
+            isMatch = False
+            print('Both of these sequences do not match.\n')
+            break
+        else:
+            isMatch = True
+            print("Both of these sequences match!\n")
+            break
+    return isMatch
+
+
 dna = genDNA()
 print(dna)
 
 rna = genRNA(dna)
 print(rna)
+
+checkSequence(dna, rna)
