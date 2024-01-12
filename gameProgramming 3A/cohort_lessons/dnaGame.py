@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.6a
+# DNA replication Gavin Kloeckner, v0.6aWIP
 
 import time, datetime # Bring the whole tool box
 
@@ -82,3 +82,5 @@ rna = genRNA(dna)
 print(rna)
 
 print(checkSequence(dna, rna[0]))
+
+print(calcScore)
