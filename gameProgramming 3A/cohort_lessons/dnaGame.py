@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.4a
+# DNA replication Gavin Kloeckner, v0.5a
 
 import time, datetime # Bring the whole tool box
 
@@ -34,21 +34,17 @@ def genRNA(dnaSequence: str) -> tuple:
 
 def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     isMatch = False
-    for eachBase in rnaSequence:
-        if eachBase == "U" and dnaSequence != "T":
-            isMatch = False
+    for rnaBase, dnaBase in zip(rnaSequence, dnaSequence):
+        if rnaBase == "U" and dnaBase != "T":
             print('Both of these sequences do not match.\n')
             break
-        elif eachBase == "C" and dnaSequence != "G":
-            isMatch = False
+        elif rnaBase == "C" and dnaBase != "G":
             print('Both of these sequences do not match.\n')
             break
-        elif eachBase == "G" and dnaSequence != "C":
-            isMatch = False
+        elif rnaBase == "G" and dnaBase != "C":
             print('Both of these sequences do not match.\n')
             break
-        elif eachBase == "T" and dnaSequence != "A":
-            isMatch = False
+        elif rnaBase == "T" and dnaBase != "A":
             print('Both of these sequences do not match.\n')
             break
         else:
