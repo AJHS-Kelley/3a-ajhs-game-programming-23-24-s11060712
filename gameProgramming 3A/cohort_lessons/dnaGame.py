@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.7aWIP
+# DNA replication Gavin Kloeckner, v0.8a
 
 import time, datetime # Bring the whole tool box
 
@@ -27,7 +27,7 @@ def doTrnascript(dnaSequence: str) -> tuple:
     print("Remember, the RNA base will match U with A.\n")
     # Start Timer
     rnaStart = time.time()
-    rnaSequence = input("Please type the correct RNA sequence with no spaces.\n").upper
+    rnaSequence = input("Please type the correct RNA sequence with no spaces.\n").upper()
     rnaStop = time.time()
     rnaTime = rnaStop - rnaStart
     return(rnaSequence, rnaTime) # Tuples are ordered (index), unchangeable, allows duplicates
@@ -48,15 +48,15 @@ def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     return isMatch
 
 
-def calcScore(time: float, dnaSequence: str) -> float:
+def calcScore(rnaTime: float, dnaSequence: str) -> float:
     score = 0
-    if time < 2.0:
+    if rnaTime < 2.0:
         score += 20000
-    elif time < 4.0:
+    elif rnaTime < 4.0:
         score += 2000
-    elif time < 6.0:
+    elif rnaTime < 6.0:
         score += 200
-    elif time < 8.0:
+    elif rnaTime < 8.0:
         score += 20
     else:
         score += 10
@@ -95,11 +95,11 @@ def saveScore(rna: str, dna: str, rnaTime: float, score: float) -> None:
 
 
 dna = genDNA()
-print(dna)
-
 rna = doTrnascript(dna)
-print(rna)
 
-print(checkSequence(dna, rna[0]))
 
-print(calcScore)
+if checkSequence(dna, rna[0]):
+    score = calcScore(rna[1], dna)
+    saveScore( dna, rna[0], rna[0], score)
+else:
+    print("The sequences did not match. Please try again.\n")
