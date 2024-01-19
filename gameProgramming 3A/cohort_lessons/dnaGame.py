@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.6aWIP
+# DNA replication Gavin Kloeckner, v0.7aWIP
 
 import time, datetime # Bring the whole tool box
 
@@ -21,13 +21,13 @@ def genDNA() -> str:
         basesGenerated += 1
     return dnaSequence
 
-def genRNA(dnaSequence: str) -> tuple:
+def doTrnascript(dnaSequence: str) -> tuple:
     print(f"Your DNA sequence is {dnaSequence}.\n")
     print("You need to enter the correct RNA Sequence based on this DNA Sequence.\n")
     print("Remember, the RNA base will match U with A.\n")
     # Start Timer
     rnaStart = time.time()
-    rnaSequence = input("Please type the correct RNA sequence with no spaces.\n")
+    rnaSequence = input("Please type the correct RNA sequence with no spaces.\n").upper
     rnaStop = time.time()
     rnaTime = rnaStop - rnaStart
     return(rnaSequence, rnaTime) # Tuples are ordered (index), unchangeable, allows duplicates
@@ -35,17 +35,16 @@ def genRNA(dnaSequence: str) -> tuple:
 def checkSequence(dnaSequence: str, rnaSequence: str) -> bool:
     isMatch = False
     for rnaBase, dnaBase in zip(rnaSequence, dnaSequence):
-        if rnaBase == "U" and dnaBase != "T":
+        if rnaBase == "U" and dnaBase != "A":
             break
         elif rnaBase == "C" and dnaBase != "G":
             break
         elif rnaBase == "G" and dnaBase != "C":
             break
-        elif rnaBase == "T" and dnaBase != "A":
+        elif rnaBase == "A" and dnaBase != "T":
             break
         else:
             isMatch = True
-            break
     return isMatch
 
 
@@ -75,10 +74,30 @@ def calcScore(time: float, dnaSequence: str) -> float:
 
     return score
 
+def saveScore(rna: str, dna: str, rnaTime: float, score: float) -> None:
+    firstName = input("what is your first name?\n")
+    lastName = input("what is your last name?\n")
+    fullname = firstName + " " + lastName
+    
+    fileName = "dnaReplicatedScore" + fullname + ".txt"
+    # My example: dnaReplicatedScoreGavinKloeckner.txt
+    # Step 2: open the file
+    saveData = open(fileName, "a") # First parameter = file name, second parameter = file mode
+    # Three main file modes
+    # "w" -- create the file. if it already exists, it will overwrite it
+    # "a" -- create the file. If the file already exists, it will add on to the file.
+    # "x" -- create a file. If file already exists, will exit with an error message.
+
+    # Step 3: Write the data to the file.
+    saveData.write("Test Message.\n")
+    # Step 4: Close the file.
+    saveData.close
+
+
 dna = genDNA()
 print(dna)
 
-rna = genRNA(dna)
+rna = doTrnascript(dna)
 print(rna)
 
 print(checkSequence(dna, rna[0]))
