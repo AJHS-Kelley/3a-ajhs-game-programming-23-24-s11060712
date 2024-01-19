@@ -1,4 +1,4 @@
-# DNA replication Gavin Kloeckner, v0.8a
+# DNA replication Gavin Kloeckner, v1.0a
 
 import time, datetime # Bring the whole tool box
 
@@ -77,9 +77,9 @@ def calcScore(rnaTime: float, dnaSequence: str) -> float:
 def saveScore(rna: str, dna: str, rnaTime: float, score: float) -> None:
     firstName = input("what is your first name?\n")
     lastName = input("what is your last name?\n")
-    fullname = firstName + " " + lastName
+    fullName = firstName + " " + lastName
     
-    fileName = "dnaReplicatedScore" + fullname + ".txt"
+    fileName = "dnaReplicatedScore" + fullName + ".txt"
     # My example: dnaReplicatedScoreGavinKloeckner.txt
     # Step 2: open the file
     saveData = open(fileName, "a") # First parameter = file name, second parameter = file mode
@@ -89,9 +89,14 @@ def saveScore(rna: str, dna: str, rnaTime: float, score: float) -> None:
     # "x" -- create a file. If file already exists, will exit with an error message.
 
     # Step 3: Write the data to the file.
-    saveData.write("Test Message.\n")
+    saveData.write(f"\nScore Generated On: {datetime.datetime.now()}\n")
+    saveData.write(f"\nPlayer Name: {fullName}\n")
+    saveData.write(f"\nDNA Sequence: {dna}\n")
+    saveData.write(f"\nRNA Sequence: {rna}\n")
+    saveData.write(f"\nTime: {rnaTime}\n")
+    saveData.write(f"\nScore: {score}\n")
     # Step 4: Close the file.
-    saveData.close
+    saveData.close()
 
 
 dna = genDNA()
@@ -100,6 +105,6 @@ rna = doTrnascript(dna)
 
 if checkSequence(dna, rna[0]):
     score = calcScore(rna[1], dna)
-    saveScore( dna, rna[0], rna[0], score)
+    saveScore(rna[0], dna, rna[1], score)
 else:
     print("The sequences did not match. Please try again.\n")

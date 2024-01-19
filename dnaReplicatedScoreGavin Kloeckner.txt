@@ -1,1 +1,24 @@
-Test Message.
+
+Score Generated On: 2024-01-19 12:56:20.992678
+
+Player Name: gavin Kloeckner
+
+DNA Sequence: CTTGG
+
+RNA Sequence: GAACC
+
+Time: CTTGG
+
+Score: 15.0
+
+Score Generated On: 2024-01-19 12:59:01.016894
+
+Player Name: Gavin Kloeckner
+
+DNA Sequence: GCGAG
+
+RNA Sequence: CGCUC
+
+Time: 13.72772765159607
+
+Score: 15.0
