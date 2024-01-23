@@ -1,4 +1,4 @@
-# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.2.1
+# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.3
 
 # Game Setup / Steps
 # Function to Layout / Setup the Grid
@@ -11,6 +11,15 @@
 
 # Divide and Conquer Method -- Break down a larger problem into smaller problems, then solve those problems
 
+import pygame, sys, random
+# sys module gives access to system level functions including open/close programse, etc.
+
+from pygame.locals import *
+# This line allows us to call functions directly instead of pygame.function()
+# We can just write function()
+# * in this line is a WILDCARD and means any or all
+# Example: delete myGameFiles*
+
 # Board Setup Data
 BOARDWIDTH = 4 # Columns
 BOARDHEIGHT = 4 # Rows
@@ -20,7 +29,7 @@ TILESIZE = 80 # Measured in Pixels
 
 # Window Size
 WINDOWWIDTH = 640 # Measured in Pixels
-WINDOWSIZE = 480 # Measured in Pixels
+WINDOWHEIGHT = 480 # Measured in Pixels
 
 # Frams Per Second
 FPS = 30 # Sets maximum, does not "improve performance"
@@ -50,3 +59,28 @@ BASICFONTSIZE = 20 # Measured in Pixels
 BUTTONCOLOR = WHITE
 BUTTONTXTCOLOR = BLACK
 MESSAGECOLOR = WHITE
+
+# Margins for Windows
+XMARGIN = int((WINDOWWIDTH - (TILESIZE * BOARDWIDTH + (BOARDWIDTH -1 ))) / 2)
+YMARGIN = int((WINDOWHEIGHT - (TILESIZE * BOARDHEIGHT + (BOARDHEIGHT -1 ))) / 2)
+
+# Directions
+UP = 'up'
+DOWN = 'down'
+LEFT = 'left'
+RIGHT = 'right'
+
+# Main Game Loop
+def main():
+    # global keyword makes Python use the same variable in the entire program
+    global FPSCLOCK, DISPLAYSURF, BASIC_FONT, RESET_SURF, RESET_RECT, NEW_SURF, NEW_RECT, SOLVE_SURF, SOLVE_RECT
+    # SURF i9s the abbreviation for SURFACE
+    # A SURF in pygame can be used to draw graphics, text, or colors
+    # The easy way to think of the SURF is a whiteboard
+    
+    # RECT is the abbreviation for RECTANGLE
+    
+    # Start the pygame module itself. This line of code is required for it to work
+
+    pygame.init()
+
