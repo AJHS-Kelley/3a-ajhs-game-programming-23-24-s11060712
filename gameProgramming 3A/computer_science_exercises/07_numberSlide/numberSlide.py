@@ -1,4 +1,4 @@
-# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.2
+# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.2.1
 
 # Game Setup / Steps
 # Function to Layout / Setup the Grid
@@ -45,3 +45,8 @@ BORDERCOLOR = BRIGHTBLUE
 
 # Font Size
 BASICFONTSIZE = 20 # Measured in Pixels
+
+# Buttons and Messages
+BUTTONCOLOR = WHITE
+BUTTONTXTCOLOR = BLACK
+MESSAGECOLOR = WHITE
