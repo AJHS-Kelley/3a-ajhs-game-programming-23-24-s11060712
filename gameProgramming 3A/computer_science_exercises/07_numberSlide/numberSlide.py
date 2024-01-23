@@ -1,4 +1,4 @@
-# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.0
+# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.1
 
 # Game Setup / Steps
 # Function to Layout / Setup the Grid
@@ -10,3 +10,14 @@
 # Check for win -- All numbers in the correct order
 
 # Divide and Conquer Method -- Break down a larger problem into smaller problems, then solve those problems
+
+# Board Setup Data
+BOARDWIDTH = 4 # Columns
+BOARDHEIGHT = 4 # Rows
+
+# Tile Data
+TILESIZE = 80 # Measured in Pixels
+
+# Window Size
+WINDOWWIDTH = 640 # Measured in Pixels
+WINDOWSIZE = 480 # Measured in Pixels
