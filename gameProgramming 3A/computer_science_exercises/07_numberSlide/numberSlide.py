@@ -1,4 +1,4 @@
-# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.3
+# Number Slide, Gavin Kloeckner, based on a project by Al Sweiggart, v0.4wip
 
 # Game Setup / Steps
 # Function to Layout / Setup the Grid
@@ -83,4 +83,30 @@ def main():
     # Start the pygame module itself. This line of code is required for it to work
 
     pygame.init()
+
+def terminate() -> None:
+    pygame.quit()
+    sys.exit()
+
+def checkForQuit() -> None:
+    for event in pygame.event.get(QUIT):
+        terminate()
+    for event in pygame.event.get(KEYUP):
+        if event.key == K_ESCAPE:
+            terminate()
+        pygame.event.post(event)
+
+def getLeftTopOfTile(tileX: int, tileY: int) -> tuple:
+    left = XMARGIN + (tileX * TILESIZE) + (tileX - 1)
+    top = YMARGIN + (tileY * TILESIZE) + (tileY - 1)
+    return (top, left)
+
+def getSpotClick(board: List, x: int, y: int) -> tuple:
+    for tileX in range(len(board)):
+        for tileY in range(len(board[0])):
+            left, top = getLeftTopOfTile(tileX, tileY)
+            tileRect = pygame.Rect(left, top, TILESIZE, TILESIZE)
+            if tileRect.collidepoint(x, y):
+                return (tileX, tileY)
+    return (None, None)
 
