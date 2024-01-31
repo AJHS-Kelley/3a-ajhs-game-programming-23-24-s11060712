@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.0.4
+# Displaying Images on a Surface, Gavin Kloeckner, v0.0.5
 
 import pygame
 from sys import exit
@@ -14,6 +14,7 @@ sky_surface = pygame.image.load('graphics/blue_sky.jpg')
 text_surface = test_font.render('My Game', True, 'Dark Green')
 
 alligator_surface = pygame.image.load('graphics/Alligator.jpg')
+alligator_x_pos = 800
 
 while True:
     for event in pygame.event.get():
@@ -24,7 +25,9 @@ while True:
     screen.blit(sky_surface, (0, 0))
     screen.blit(ground_surface, (0, 300))
     screen.blit(text_surface, (300, 50))
-    screen.blit(alligator_surface, (550, 250))
+    alligator_x_pos -= 3
+    if alligator_x_pos < -300: alligator_x_pos = 800
+    screen.blit(alligator_surface, (alligator_x_pos, 250))
 
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(80)
