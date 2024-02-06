@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.0.6
+# Displaying Images on a Surface, Gavin Kloeckner, v0.0.7
 
 import pygame
 from sys import exit
@@ -30,8 +30,9 @@ while True:
     screen.blit(sky_surface, (0, 0))
     screen.blit(ground_surface, (0, 300))
     screen.blit(text_surface, (300, 50))
-    alligator_x_pos -= 3
-    if alligator_x_pos < -300: alligator_x_pos = 800
+
+    alligator_rect.x -= 3
+    if alligator_rect.right < 0: alligator_rect.left = 800
     screen.blit(alligator_surface, alligator_rect)
     screen.blit(player_surface, player_rect)
 
