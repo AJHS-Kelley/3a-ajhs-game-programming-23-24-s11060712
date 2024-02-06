@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.0.9
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.0
 
 import pygame
 from sys import exit
@@ -22,26 +22,40 @@ alligator_x_pos = 800
 player_surf = pygame.image.load('graphics/steve.png').convert_alpha()
 player_x_pos = 200
 player_rect = player_surf.get_rect(midbottom = (50,300))
+player_gravity = 0
 
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
-        if event.type == pygame.MOUSEMOTION:
-            if player_rect.collidepoint(event.pos): print('Collision Deteced!')
+        # if event.type == pygame.MOUSEBUTTONDOWN:
+            # if player_rect.collidepoint(event.pos):
+            #     player_gravity = -20
+            
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                player_gravity = -20 
+
+
 
 
     screen.blit(sky_surf, (0, 0))
     screen.blit(ground_surf, (0, 300))
-    pygame.draw.rect(screen, 'Green', score_rect, 4, 15)
-    pygame.draw.line(screen, 'Gold', (0,0), pygame.mouse.get_pos(), 10)
+    pygame.draw.rect(screen, 'Green', score_rect, 17, 15)
     screen.blit(score_surf, score_rect)
 
     alligator_rect.x -= 3
     if alligator_rect.right <= 0: alligator_rect.left = 800
     screen.blit(alligator_surf, alligator_rect)
+
+    player_gravity += 1
+    player_rect.y += player_gravity
     screen.blit(player_surf, player_rect)
+
+    # keys = pygame.key.get_pressed()
+    # if keys[pygame.K_SPACE]:
+    #     print('jump ')
 
     # if player_rect.colliderect(alligator_rect):
     #     print('Collision Detected!')
