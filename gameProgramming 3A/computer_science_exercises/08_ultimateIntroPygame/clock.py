@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.0.7
+# Displaying Images on a Surface, Gavin Kloeckner, v0.0.9
 
 import pygame
 from sys import exit
@@ -11,7 +11,9 @@ test_font = pygame.font.Font(None, 50)
 
 ground_surf = pygame.image.load('graphics/red_stone.jpg').convert()
 sky_surf = pygame.image.load('graphics/blue_sky.jpg').convert()
-text_surf = test_font.render('My Game', True, 'Dark Green')
+
+score_surf = test_font.render('My Game', True, 'Dark Green')
+score_rect = score_surf.get_rect(center = (400, 50))
 
 alligator_surf = pygame.image.load('graphics/Alligator.png').convert_alpha()
 alligator_rect = alligator_surf.get_rect(bottomright = (600, 300))
@@ -32,7 +34,9 @@ while True:
 
     screen.blit(sky_surf, (0, 0))
     screen.blit(ground_surf, (0, 300))
-    screen.blit(text_surf, (300, 50))
+    pygame.draw.rect(screen, 'Green', score_rect, 4, 15)
+    pygame.draw.line(screen, 'Gold', (0,0), pygame.mouse.get_pos(), 10)
+    screen.blit(score_surf, score_rect)
 
     alligator_rect.x -= 3
     if alligator_rect.right <= 0: alligator_rect.left = 800
