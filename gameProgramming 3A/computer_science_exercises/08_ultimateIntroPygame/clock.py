@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.2wip
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.3wip
 
 import pygame
 from sys import exit
@@ -21,6 +21,8 @@ startTime = 0
 ground_surf = pygame.image.load('graphics/red_stone.jpg').convert()
 sky_surf = pygame.image.load('graphics/blue_sky.jpg').convert()
 
+# .convert() will modify an image file to make it easier to work with in Pygame
+
 # score_surf = test_font.render('My Game', True, 'Dark Green')
 # score_rect = score_surf.get_rect(center = (400, 50))
 
@@ -32,6 +34,15 @@ player_surf = pygame.image.load('graphics/steve_walk.png').convert_alpha()
 player_x_pos = 200
 player_rect = player_surf.get_rect(midbottom = (50,300))
 player_gravity = 0
+playerStand = pygame.image.load('graphics/steve_stand.png').convert_alpha()
+playerStandScaled = pygame.transform.rotozoom(playerStand, 0,2)
+playerStand_rect = playerStand.get_rect(center = (400, 200))
+
+gameName = test_font.render('Pixel Runner', True, 'Grey')
+gameName_rect = gameName.get_rect(center = (400, 90))
+gameMessage = test_font.render('Press space to run the game', True, "Lime")
+gameMessage_rect = gameMessage.get_rect(center = (400, 120))
+
 
 while True:
     for event in pygame.event.get():
@@ -87,6 +98,9 @@ while True:
             gameActive = False
     else:
         screen.fill('Red')
+        screen.blit(playerStandScaled, playerStand_rect)
+        screen.blit(gameName, gameName_rect)
+        screen.blit(gameMessage, gameMessage_rect)
 
 
     pygame.display.update()
