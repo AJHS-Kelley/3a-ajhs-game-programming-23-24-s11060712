@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.2
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.2wip
 
 import pygame
 from sys import exit
@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 test_font = pygame.font.Font(None, 50)
-gameActive = True
+gameActive = False
 startTime = 0
 
 
@@ -28,7 +28,7 @@ alligator_surf = pygame.image.load('graphics/Alligator.png').convert_alpha()
 alligator_rect = alligator_surf.get_rect(bottomright = (600, 300))
 alligator_x_pos = 800
 
-player_surf = pygame.image.load('graphics/steve.png').convert_alpha()
+player_surf = pygame.image.load('graphics/steve_walk.png').convert_alpha()
 player_x_pos = 200
 player_rect = player_surf.get_rect(midbottom = (50,300))
 player_gravity = 0
