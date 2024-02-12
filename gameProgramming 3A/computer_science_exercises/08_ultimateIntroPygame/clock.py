@@ -1,7 +1,13 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.1
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.2
 
 import pygame
 from sys import exit
+
+def displayScore():
+    currentTime = int(pygame.time.get_ticks() / 1000) - startTime
+    scoreSurf = test_font.render(f'Score: {currentTime}', False, 'Dark Green')
+    scoreRect = scoreSurf.get_rect(center = (400, 50))
+    screen.blit(scoreSurf, scoreRect)
 
 pygame.init()
 screen = pygame.display.set_mode((800,400))
@@ -9,12 +15,14 @@ pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 test_font = pygame.font.Font(None, 50)
 gameActive = True
+startTime = 0
+
 
 ground_surf = pygame.image.load('graphics/red_stone.jpg').convert()
 sky_surf = pygame.image.load('graphics/blue_sky.jpg').convert()
 
-score_surf = test_font.render('My Game', True, 'Dark Green')
-score_rect = score_surf.get_rect(center = (400, 50))
+# score_surf = test_font.render('My Game', True, 'Dark Green')
+# score_rect = score_surf.get_rect(center = (400, 50))
 
 alligator_surf = pygame.image.load('graphics/Alligator.png').convert_alpha()
 alligator_rect = alligator_surf.get_rect(bottomright = (600, 300))
@@ -44,14 +52,16 @@ while True:
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 gameActive = True
                 alligator_rect.left = 800
+                startTime = int(pygame.time.get_ticks() / 1000)
 
 
 
     if gameActive:
         screen.blit(sky_surf, (0, 0))
         screen.blit(ground_surf, (0, 300))
-        pygame.draw.rect(screen, 'Green', score_rect, 17, 15)
-        screen.blit(score_surf, score_rect)
+        # pygame.draw.rect(screen, 'Green', score_rect, 17, 15)
+        # screen.blit(score_surf, score_rect)
+        displayScore()
 
         alligator_rect.x -= 3
         if alligator_rect.right <= 0: alligator_rect.left = 800
