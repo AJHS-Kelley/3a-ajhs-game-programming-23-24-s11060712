@@ -1,7 +1,8 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.4
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.5
 
 import pygame
 from sys import exit
+from random import randint
 
 def displayScore():
     currentTime = int(pygame.time.get_ticks() / 1000) - startTime
@@ -9,6 +10,16 @@ def displayScore():
     scoreRect = scoreSurf.get_rect(center = (400, 50))
     screen.blit(scoreSurf, scoreRect)
     return currentTime
+
+def obstacleMovement(obstacle_list):
+    if obstacle_list:
+        for obstacle_rect in obstacle_list:
+            obstacle_rect.x -= 5
+
+            screen.blit(alligator_surf, obstacle_rect)
+
+        return obstacle_list
+    else: return []
 
 pygame.init()
 screen = pygame.display.set_mode((800,400))
@@ -32,6 +43,8 @@ alligator_surf = pygame.image.load('graphics/Alligator.png').convert_alpha()
 alligator_rect = alligator_surf.get_rect(bottomright = (600, 300))
 alligator_x_pos = 800
 
+obstacle_rect_list = []
+
 player_surf = pygame.image.load('graphics/steve_walk.png').convert_alpha()
 player_x_pos = 200
 player_rect = player_surf.get_rect(midbottom = (50,300))
@@ -44,6 +57,10 @@ gameName = test_font.render('Pixel Runner', True, 'Lime')
 gameName_rect = gameName.get_rect(center = (410, 120))
 gameMessage = test_font.render('Press space to run the game', True, 'Lime')
 gameMessage_rect = gameMessage.get_rect(center = (400, 270))
+
+obstacleTimer = pygame.USEREVENT + 1
+pygame.time.set_timer(obstacleTimer, 900)
+
 
 
 while True:
@@ -66,7 +83,9 @@ while True:
                 gameActive = True
                 alligator_rect.left = 800
                 startTime = int(pygame.time.get_ticks() / 1000)
-
+        
+        if event.type == obstacleTimer and gameActive:
+            obstacle_rect_list.append(alligator_surf.get_rect(bottomright = (randint(900, 1100), 300)))
 
 
     if gameActive:
@@ -76,14 +95,15 @@ while True:
         # screen.blit(score_surf, score_rect)
         score = displayScore()
 
-        alligator_rect.x -= 3
-        if alligator_rect.right <= 0: alligator_rect.left = 800
-        screen.blit(alligator_surf, alligator_rect)
+        # alligator_rect.x -= 3 
+        # screen.blit(alligator_surf, alligator_rect)
 
         player_gravity += 0.2
         player_rect.y += player_gravity
         if player_rect.bottom >= 300: player_rect.bottom = 300
         screen.blit(player_surf, player_rect)
+
+        obstacle_rect_list = obstacleMovement(obstacle_rect_list)
 
         # keys = pygame.key.get_pressed()
         # if keys[pygame.K_SPACE]:
