@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.4wip
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.4
 
 import pygame
 from sys import exit
@@ -38,10 +38,10 @@ player_rect = player_surf.get_rect(midbottom = (50,300))
 player_gravity = 0
 playerStand = pygame.image.load('graphics/steve_stand.png').convert_alpha()
 playerStandScaled = pygame.transform.rotozoom(playerStand, 0,3)
-playerStand_rect = playerStand.get_rect(center = (390, 200))
+playerStand_rect = playerStand.get_rect(center = (400, 160))
 
 gameName = test_font.render('Pixel Runner', True, 'Lime')
-gameName_rect = gameName.get_rect(center = (400, 120))
+gameName_rect = gameName.get_rect(center = (410, 120))
 gameMessage = test_font.render('Press space to run the game', True, 'Lime')
 gameMessage_rect = gameMessage.get_rect(center = (400, 270))
 
@@ -106,11 +106,9 @@ while True:
         scoreMessage_rect = scoreMessage.get_rect(center = (400, 330))
         screen.blit(gameName, gameName_rect)
 
-    if score == 0:
-        screen.blit(gameMessage, gameMessage_rect)
-    else:
-        screen.blit(scoreMessage, scoreMessage_rect)
+    if score == 0: screen.blit(gameMessage, gameMessage_rect)
+    else: screen.blit(scoreMessage, scoreMessage_rect)
 
 
     pygame.display.update()
-    clock.tick(80)
+    clock.tick(70)
