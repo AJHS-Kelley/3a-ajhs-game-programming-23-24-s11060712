@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.5
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.6
 
 import pygame
 from sys import exit
@@ -18,8 +18,17 @@ def obstacleMovement(obstacle_list):
 
             screen.blit(alligator_surf, obstacle_rect)
 
+            obstacle_list = [obstacle for obstacle in obstacle_list if obstacle.x > -100]
+
         return obstacle_list
     else: return []
+
+def collisions(player, obstacles):
+    if obstacles:
+        for obstacle_rect in obstacles:
+            if player.colliderect(obstacle_rect): return False
+    return True
+    
 
 pygame.init()
 screen = pygame.display.set_mode((800,400))
@@ -59,7 +68,7 @@ gameMessage = test_font.render('Press space to run the game', True, 'Lime')
 gameMessage_rect = gameMessage.get_rect(center = (400, 270))
 
 obstacleTimer = pygame.USEREVENT + 1
-pygame.time.set_timer(obstacleTimer, 900)
+pygame.time.set_timer(obstacleTimer, 1800)
 
 
 
@@ -98,12 +107,14 @@ while True:
         # alligator_rect.x -= 3 
         # screen.blit(alligator_surf, alligator_rect)
 
-        player_gravity += 0.2
+        player_gravity += 0.3
         player_rect.y += player_gravity
         if player_rect.bottom >= 300: player_rect.bottom = 300
         screen.blit(player_surf, player_rect)
 
         obstacle_rect_list = obstacleMovement(obstacle_rect_list)
+
+        gameActive = collisions(player_rect, obstacle_rect_list)
 
         # keys = pygame.key.get_pressed()
         # if keys[pygame.K_SPACE]:
@@ -116,11 +127,11 @@ while True:
         # if player_rect.collidepoint((mouse_pos)):
         #     print(pygame.mouse.get_pressed())
 
-        if alligator_rect.colliderect(player_rect):
-            gameActive = False
+
     else:
         screen.fill('Cyan')
         screen.blit(playerStandScaled, playerStand_rect)
+        obstacle_rect_list.clear()
 
         scoreMessage = test_font.render(f'Your score is: {score}', True, 'Lime')
         scoreMessage_rect = scoreMessage.get_rect(center = (400, 330))
