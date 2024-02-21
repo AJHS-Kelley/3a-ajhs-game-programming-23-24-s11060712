@@ -1,4 +1,4 @@
-# Displaying Images on a Surface, Gavin Kloeckner, v0.1.6
+# Displaying Images on a Surface, Gavin Kloeckner, v0.1.7
 
 import pygame
 from sys import exit
@@ -132,6 +132,8 @@ while True:
         screen.fill('Cyan')
         screen.blit(playerStandScaled, playerStand_rect)
         obstacle_rect_list.clear()
+        player_rect.midbottom = (80, 300)
+        player_gravity = 0
 
         scoreMessage = test_font.render(f'Your score is: {score}', True, 'Lime')
         scoreMessage_rect = scoreMessage.get_rect(center = (400, 330))
