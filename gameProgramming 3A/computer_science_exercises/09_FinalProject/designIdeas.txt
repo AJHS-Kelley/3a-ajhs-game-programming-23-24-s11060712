@@ -1,0 +1,22 @@
+game type: Shoot'em up.
+
+levels: Up in the air/flying.
+    -- Flying above a mountain range
+    -- Flying above a forest
+
+enemies: Enemy fighter jets.
+    -- Su57 Russian fighter jets
+    -- North Korean fighter jets
+
+player character: Allied fighter jet.
+    -- F35B American fighter jet
+
+win condition: Eliminate all enemy aircraft.
+
+loss condition: Allied jet get's destroyed.
+
+difficulty: Recruit or Veteran
+        -- How many enemies spawn at once
+        -- How fast the enemies shoot
+        -- Speed of the enemies
+        -- How many missles you have
