@@ -16,7 +16,15 @@ win condition: Eliminate all enemy aircraft.
 loss condition: Allied jet get's destroyed.
 
 difficulty: Recruit or Veteran
-        -- How many enemies spawn at once
-        -- How fast the enemies shoot
-        -- Speed of the enemies
-        -- How many missles you have
+    -- How many enemies spawn at once
+    -- How fast the enemies shoot
+    -- Speed of the enemies
+    -- How many missles you have
+    -- How much ammo you have
+
+controls: Arrow keys/mouse
+    -- Up arrown
+    -- Down Arrow
+    -- Left click -- Fire gun
+        -- Hold to fire for a duration
+    -- Right click -- Fire missles
