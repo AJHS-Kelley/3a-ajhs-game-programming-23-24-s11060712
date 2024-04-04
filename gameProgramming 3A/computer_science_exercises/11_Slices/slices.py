@@ -1,4 +1,4 @@
-# Slices, Gavin, Kloeckner, v0.1
+# Slices, Gavin, Kloeckner, v0.2
 
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -32,3 +32,7 @@ print(string2[:13])
 
 # Slice the whole thing
 print(string2[:])
+
+# Negative Slices
+print(alphabet[-7:-2])
+
