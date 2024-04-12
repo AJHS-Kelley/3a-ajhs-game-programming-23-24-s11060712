@@ -1,4 +1,4 @@
-# Arial Combat Sim, Gavin Kloeckner, v0.1
+# Arial Combat Sim, Gavin Kloeckner, v0.1.1
 
 import pygame
 from sys import exit
@@ -31,6 +31,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
+
 
     pygame.display.update()
     clock.tick(90)
