@@ -23,7 +23,8 @@ gameMessage2_rect = gameMessage2.get_rect(center =(490, 210))
 gameActive = True
 
 
-# mig_surface = pygame.image.load()
+mig_surface = pygame.image.load('img/MiG21.png')
+mig_y_pos = 300
 
 
 while True:
@@ -33,6 +34,9 @@ while True:
             exit()
 
 
+
+    screen.blit(mig_surface,(mig_y_pos, 30))
+    # mig_y_pos -= 
     screen.blit(gameName, gameName_rect)
     screen.blit(gameMessage, gameMessage_rect)
     screen.blit(gameMessage2, gameMessage2_rect)
