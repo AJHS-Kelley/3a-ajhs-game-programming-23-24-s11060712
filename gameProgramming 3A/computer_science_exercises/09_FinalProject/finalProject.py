@@ -33,14 +33,15 @@ while True:
             exit()
 
 
+    screen.blit(gameName, gameName_rect)
+    screen.blit(gameMessage, gameMessage_rect)
+    screen.blit(gameMessage2, gameMessage2_rect)
 
     pygame.display.update()
     clock.tick(90)
 
 
-    screen.blit(gameName, gameName_rect)
-    screen.blit(gameMessage, gameMessage_rect)
-    screen.blit(gameMessage2, gameMessage2_rect)
+    
 
 
 
