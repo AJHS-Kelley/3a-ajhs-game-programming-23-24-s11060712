@@ -1,4 +1,4 @@
-# Arial Combat Sim, Gavin Kloeckner, v0.1.1
+# Arial Combat Sim, Gavin Kloeckner, v0.1.2
 
 import pygame
 from sys import exit
@@ -20,11 +20,16 @@ gameMessage_rect = gameMessage.get_rect(center = (490, 270))
 gameMessage2 = test_font3.render('A Game by Gavin Kloeckner', False, 'Dark Green')
 gameMessage2_rect = gameMessage2.get_rect(center =(490, 210))
 
+sky_surface = pygame.image.load('img/bluesky.png')
+
 gameActive = True
 
 
-mig_surface = pygame.image.load('img/MiG21.png')
-mig_y_pos = 300
+f35b_surface = pygame.image.load('img/F35B.png')
+f35b_x = 440
+f35b_speed = 3
+part_one = True
+x_direction = 0
 
 
 while True:
@@ -33,13 +38,31 @@ while True:
             pygame.quit()
             exit()
 
+    if part_one:
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                f35b_x = -1
+            elif event.key == pygame.K_RIGHT:
+                f35b_x = 1
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_LEFT:
+                f35b_x = 0
+            if event.key == pygame.K_RIGHT:
+                f35b_x = 0
+
+    if part_one:
+        f35b_x += f35b_speed * x_direction
 
 
-    screen.blit(mig_surface,(mig_y_pos, 30))
-    # mig_y_pos -= 
+
+
+    screen.blit(f35b_surface,(f35b_x, 390))
+    screen.blit(sky_surface, (0,0))
     screen.blit(gameName, gameName_rect)
     screen.blit(gameMessage, gameMessage_rect)
     screen.blit(gameMessage2, gameMessage2_rect)
+
+    pygame.key.get_pressed()
 
     pygame.display.update()
     clock.tick(90)
