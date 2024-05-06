@@ -1,4 +1,4 @@
-# Arial Combat Sim, Gavin Kloeckner, v0.1.2
+# Arial Combat Sim, Gavin Kloeckner, v0.1.3
 
 import pygame
 from sys import exit
@@ -29,7 +29,7 @@ f35b_surface = pygame.image.load('img/F35B.png')
 f35b_x = 440
 f35b_speed = 3
 part_one = True
-x_direction = 0
+# x_direction = 0
 
 
 while True:
@@ -41,17 +41,17 @@ while True:
     if part_one:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                f35b_x = -1
+                f35b_x += -1
             elif event.key == pygame.K_RIGHT:
-                f35b_x = 1
+                f35b_x += 1
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 f35b_x = 0
             if event.key == pygame.K_RIGHT:
                 f35b_x = 0
 
-    if part_one:
-        f35b_x += f35b_speed * x_direction
+    # if part_one:
+    #     f35b_x += f35b_speed  * x_direction
 
 
 
