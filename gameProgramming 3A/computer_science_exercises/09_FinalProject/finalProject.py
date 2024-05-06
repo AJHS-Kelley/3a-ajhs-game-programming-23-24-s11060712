@@ -1,4 +1,4 @@
-# Arial Combat Sim, Gavin Kloeckner, v0.1.3a
+# Arial Combat Sim, Gavin Kloeckner, v0.1.3b
 
 import pygame
 from sys import exit
@@ -40,24 +40,23 @@ while True:
 
     if part_one:
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_LEFT and f35b_x > 1:
                 f35b_x += -1
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_RIGHT and f35b_x > 90:
                 f35b_x += 1
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_LEFT:
-                f35b_x = 0
-            if event.key == pygame.K_RIGHT:
-                f35b_x = 0
+        # if event.type == pygame.KEYUP:
+        #     if event.key == pygame.K_LEFT:
+        #         f35b_x = 0
+        #     if event.key == pygame.K_RIGHT:
+        #         f35b_x = 0
 
     # if part_one:
     #     f35b_x += f35b_speed  * x_direction
 
 
 
-
-    screen.blit(f35b_surface,(f35b_x, 390))
     screen.blit(sky_surface, (0,0))
+    screen.blit(f35b_surface,(f35b_x, 390))
     screen.blit(gameName, gameName_rect)
     screen.blit(gameMessage, gameMessage_rect)
     screen.blit(gameMessage2, gameMessage2_rect)
