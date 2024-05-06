@@ -1,4 +1,4 @@
-# Arial Combat Sim, Gavin Kloeckner, v0.1.3
+# Arial Combat Sim, Gavin Kloeckner, v0.1.3a
 
 import pygame
 from sys import exit
